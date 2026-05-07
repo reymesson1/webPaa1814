@@ -24,7 +24,7 @@ function App() {
       <header className="fixed top-0 left-0 w-full bg-black/70 backdrop-blur-xl border-b border-zinc-800 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           <h1 className="text-3xl font-black text-yellow-400">
-            FERREMAX
+            FERRONOVA
           </h1>
 
           <nav className="hidden md:flex gap-8 text-zinc-300">
