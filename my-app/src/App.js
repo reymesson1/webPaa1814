@@ -1,7 +1,10 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import HomeView from './features/Home/HomeView';
-
+import CotizarView from './features/Cotizar/CotizarView';
+import CategoriasView from './features/Categoria/CategoriaView';
+import ContactoView from './features/Contacto/ContactoView';
+import ProductView from './features/Product/ProductView';
 
 function App() {
   const categories = [
@@ -38,31 +41,32 @@ function App() {
           </h1>
 
           <nav className="hidden md:flex gap-8 text-zinc-300">
-            <a href="#inicio" className="hover:text-yellow-400">
+            <Link to="/" className="hover:text-yellow-400">
               Inicio
-            </a>
-            <a href="#categorias" className="hover:text-yellow-400">
+            </Link>
+            <Link to="/categorias" className="hover:text-yellow-400">
               Categorías
-            </a>
-            <a href="#contacto" className="hover:text-yellow-400">
+            </Link>
+            <Link to="/contacto" className="hover:text-yellow-400">
               Contacto
-            </a>
+            </Link>
           </nav>
 
-          <button className="bg-yellow-400 text-black px-5 py-2 rounded-xl font-bold">
+          <Link to="/cotizar" className="bg-yellow-400 text-black px-5 py-2 rounded-xl font-bold">
             Cotizar
-          </button>
+          </Link>
         </div>
       </header>
 
-      <main className="pt-20">
-          <Routes>
-            <Route path="/" element={<HomeView />} />
-            {/* <Route path="/products" element={<Products />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} /> */}
-          </Routes>
-        </main>
+       <div className="flex-1 flex items-center justify-center pt-28">
+        <Routes>
+          <Route path="/" element={<HomeView />} />
+          <Route path="/cotizar" element={<CotizarView />} />
+          <Route path="/categorias" element={<CategoriasView />} />
+          <Route path="/contacto" element={<ContactoView />} />          
+          <Route path="/product" element={<ProductView />} />          
+        </Routes>
+      </div>
 
       {/* Footer */}
       <footer

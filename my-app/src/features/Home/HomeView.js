@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function HomeView() {
   const categories = [
@@ -27,32 +28,7 @@ function HomeView() {
 
   return (
     <div className="bg-zinc-950 text-white min-h-screen">
-      {/* Navbar */}
-      <header className="fixed top-0 left-0 w-full bg-black/70 backdrop-blur-xl border-b border-zinc-800 z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-          <h1 className="text-3xl font-black text-yellow-400">
-            FERRONOVA
-          </h1>
 
-          <nav className="hidden md:flex gap-8 text-zinc-300">
-            <a href="#inicio" className="hover:text-yellow-400 transition">
-              Inicio
-            </a>
-
-            <a href="#categorias" className="hover:text-yellow-400 transition">
-              Categorías
-            </a>
-
-            <a href="#contacto" className="hover:text-yellow-400 transition">
-              Contacto
-            </a>
-          </nav>
-
-          <button className="bg-yellow-400 text-black px-5 py-2 rounded-xl font-bold hover:bg-yellow-300 transition">
-            Cotizar
-          </button>
-        </div>
-      </header>
 
       {/* Hero */}
       <section
@@ -83,13 +59,13 @@ function HomeView() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-yellow-400 text-black px-8 py-4 rounded-2xl font-bold hover:bg-yellow-300 transition">
+            <Link to="/product" className="bg-yellow-400 text-black px-8 py-4 rounded-2xl font-bold hover:bg-yellow-300 transition">
               Explorar Productos
-            </button>
+            </Link>
 
-            <button className="border border-zinc-500 px-8 py-4 rounded-2xl hover:border-yellow-400 hover:text-yellow-400 transition">
+            <Link to="/categorias" className="border border-zinc-500 px-8 py-4 rounded-2xl hover:border-yellow-400 hover:text-yellow-400 transition">
               Ver Catálogo
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -137,9 +113,9 @@ function HomeView() {
                   {category.description}
                 </p>
 
-                <button className="bg-yellow-400 text-black px-5 py-3 rounded-xl font-bold hover:bg-yellow-300 transition">
+                <Link to="/product" className="bg-yellow-400 text-black px-5 py-3 rounded-xl font-bold hover:bg-yellow-300 transition">
                   Ver Más
-                </button>
+                </Link>
               </div>
             </div>
           ))}
